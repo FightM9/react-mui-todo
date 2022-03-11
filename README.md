@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# ⚡ To-do list
+A simple todo web application written in React + JavaScript. Try out now on
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

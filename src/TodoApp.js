@@ -20,7 +20,7 @@ export default function TodoApp() {
 
   const getTodoIndexById = (id) => todos.findIndex((todo) => todo.id === id);
 
-  const addTodo = (title) => setTodos([...todos, createNewTodo(title)]);
+  const addTodo = (title) => setTodos([createNewTodo(title), ...todos]);
 
   const editTodo = (id) => {
     const oldTitle = getTodoById(id).title;

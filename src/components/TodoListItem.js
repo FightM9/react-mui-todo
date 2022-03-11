@@ -16,7 +16,7 @@ export default function TodoItem({ Todo, id, title, complete}) {
         {title} 
       </label>
       <span>
-        <button onClick={() => Todo.editTodo(id, title)}>R</button>
+        <button onClick={() => Todo.editTodo(id)}>R</button>
         <button onClick={() => Todo.removeTodo(id)}>D</button>
       </span>
     </li>
