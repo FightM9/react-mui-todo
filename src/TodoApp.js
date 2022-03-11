@@ -16,22 +16,21 @@ export default function TodoApp() {
     };
   };
 
+  const getTodoById = (id) => todos.find((todo) => todo.id === id);
+
+  const getTodoIndexById = (id) => todos.findIndex((todo) => todo.id === id);
+
   const addTodo = (title) => setTodos([...todos, createNewTodo(title)]);
 
-  const editTodo = (id, title) => {
-    console.log(id, title)
-    const newTitle = openModalInput(title);
-    console.log(id, newTitle)
-    // setTodos(
-    //     todos.map((todo) => {
-    //       if (todo.id === id) {
-    //         todo.title = newTitle;
-    //       }
-    //     })
-    //   );
-
-  }
-
+  const editTodo = (id) => {
+    const oldTitle = getTodoById(id).title;
+    const newTitle = openModalInput(oldTitle);
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, title: newTitle } : { ...todo }
+      )
+    );
+  };
 
   const removeTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
 
