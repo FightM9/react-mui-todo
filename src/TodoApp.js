@@ -3,6 +3,9 @@ import Form from "./components/Form";
 import { openModalInput } from "./components/modal";
 import TodoList from "./components/TodoList";
 import FakeData from "./utils/fakeData";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import TodoTabs from "./components/TodoTabs";
 
 export default function TodoApp() {
   const [todos, setTodos] = useState(FakeData);
@@ -44,6 +47,7 @@ export default function TodoApp() {
   return (
     <div>
       <Form addTodo={addTodo} />
+      <TodoTabs/>
       <TodoList
         // Object with functions for update TodoApp
         Todo={{ editTodo, removeTodo, toggleTodoStatus }}
