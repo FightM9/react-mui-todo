@@ -1,3 +1,13 @@
+
+
+export const actionType = {
+  ADD: 'ADD',
+  REMOVE: 'REMOVE',
+  EDIT: 'EDIT',
+  TOGGLE: 'TOGGLE'
+}
+
+
 /**
  * Returns the state with the new todo item prepended
  *
@@ -78,7 +88,7 @@ export default function reducer(state, action) {
 
     case "EDIT":
       const newTitle = action.payload;
-      const editId = editPayload.id;
+      const editId = action.id;
       return editTodoTitle(state, editId, newTitle);
 
     case "TOGGLE":
