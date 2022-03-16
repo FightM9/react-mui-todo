@@ -7,7 +7,7 @@ export default function TodoList({ Todo, todos }) {
       {todos &&
         todos.map((todo) => (
           <TodoItem
-            Todo={Todo}
+            // Todo={Todo}
             key={todo.id}
             id={todo.id}
             title={todo.title}

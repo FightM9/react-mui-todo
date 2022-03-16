@@ -1,24 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Context } from "../utils/context";
 
-export default function TodoItem({ Todo, id, title, complete}) {
-  const [completeStatus, setCompete] = useState(complete)
-
-  const onClickCheckbox = (evt) => {
-     console.log(evt.target.checked)
-     setCompete(!complete)
-     Todo.toggleTodo(id);
-  } 
+export default function TodoItem({id, title, complete}) {
+  const {editTodo, removeTodo, toggleTodo} = useContext(Context);
 
   return (
     <li>
       <label>
-        <input onClick={onClickCheckbox} type="checkbox" defaultChecked={completeStatus}/>
+        <input onChange={() => toggleTodo(id)} type="checkbox" checked={complete}/>
         <span></span>
         {title} 
       </label>
       <span>
-        <button onClick={() => Todo.editTodo(id)}>R</button>
-        <button onClick={() => Todo.removeTodo(id)}>D</button>
+        <button onClick={() => editTodo(id)}>R</button>
+        <button onClick={() => removeTodo(id)}>D</button>
       </span>
     </li>
   );
