@@ -6,12 +6,10 @@ import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 
 
-export default function TodoTabs(props) {
-  const [value, setValue] = React.useState(0);
-
+export default function TodoTabs({value, setValue}) {
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    console.log(value);
   };
 
   return (
@@ -22,11 +20,4 @@ export default function TodoTabs(props) {
     </Tabs>
   );
 }
-
-function a11yProps(index) {
-    return {
-      id: `simple-tab-${index}`,
-      'aria-controls': `simple-tabpanel-${index}`,
-    };
-  }
 

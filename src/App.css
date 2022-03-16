@@ -5,6 +5,11 @@
     color: rgb(23, 24, 26);
 }
 
+body {
+    width: 400px;
+    margin: 20px auto;
+}
+
 ul {
     list-style: none;
     padding: 0;

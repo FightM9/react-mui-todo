@@ -3,13 +3,11 @@ import Form from "./components/Form";
 import { openModalInput } from "./components/modal";
 import TodoList from "./components/TodoList";
 import FakeData from "./utils/fakeData";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import TodoTabs from "./components/TodoTabs";
 
 export default function TodoApp() {
   const [todos, setTodos] = useState(FakeData);
-  console.log(todos);
+  const [tab, setTab] = useState(0);
 
   const createNewTodo = (title) => {
     return {
@@ -19,6 +17,13 @@ export default function TodoApp() {
     };
   };
 
+  const getActiveTodoList = function() {
+    switch (tab) {
+      case 1: return todos.filter((todo) => todo.complete === false);
+      case 2: return todos.filter((todo) => todo.complete === true);
+      default: return todos;
+    }
+  };
   const getTodoById = (id) => todos.find((todo) => todo.id === id);
 
   const getTodoIndexById = (id) => todos.findIndex((todo) => todo.id === id);
@@ -37,22 +42,25 @@ export default function TodoApp() {
 
   const removeTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
 
-  const toggleTodoStatus = (id) =>
+  const toggleTodo = (id) => {
+ 
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, complete: !todo.complete } : { ...todo }
       )
-    );
+    )
+    console.log(todos);
+  };
 
   return (
     <div>
       <Form addTodo={addTodo} />
-      <TodoTabs/>
+      <TodoTabs value={tab} setValue={setTab} />
       <TodoList
         // Object with functions for update TodoApp
-        Todo={{ editTodo, removeTodo, toggleTodoStatus }}
+        Todo={{ editTodo, removeTodo, toggleTodo }}
         // Array of TodoApp item
-        todos={todos}
+        todos={getActiveTodoList()}
       />
     </div>
   );

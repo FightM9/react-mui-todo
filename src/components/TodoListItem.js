@@ -6,6 +6,7 @@ export default function TodoItem({ Todo, id, title, complete}) {
   const onClickCheckbox = (evt) => {
      console.log(evt.target.checked)
      setCompete(!complete)
+     Todo.toggleTodo(id);
   } 
 
   return (
