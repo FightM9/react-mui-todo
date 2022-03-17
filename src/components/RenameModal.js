@@ -27,21 +27,22 @@ export default function RenameModal({ editableTodo, onRename, open, setOpen }) {
         <DialogTitle>Rename</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Rename item "{editableTodo.title}"
+           Enter a new title for the "{editableTodo.title}"
           </DialogContentText>
           <TextField
             inputRef={inputRef}
             autoFocus
-            margin="dense"
+            margin="normal"
             type="text"
             fullWidth
             variant="standard"
             defaultValue={editableTodo.title}
+            onKeyPress={(e) => {if (e.key === 'Enter') {handleRename()}}}
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleRename}>Rename</Button>
+          <Button size="small" variant="outlined" onClick={handleClose}>Cancel</Button>
+          <Button size="small" variant="contained" onClick={handleRename}>Rename</Button>
         </DialogActions>
       </Dialog>
     </div>
