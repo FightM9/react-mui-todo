@@ -87,8 +87,8 @@ export default function reducer(state, action) {
       return removeTodo(state, removeId);
 
     case "EDIT":
-      const newTitle = action.payload;
-      const editId = action.id;
+      const editId = action.payload;
+      const newTitle = action.title;
       return editTodoTitle(state, editId, newTitle);
 
     case "TOGGLE":
