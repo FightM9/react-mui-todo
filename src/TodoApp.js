@@ -1,11 +1,12 @@
 import React, { useReducer, useState } from "react";
 import AddTodoForm from "./components/AddTodoForm";
-import { openModalInput } from "./components/modal";
+import Card from '@mui/material/Card';
 import TodoList from "./components/TodoList";
 import FakeData from "./utils/fakeData";
 import TodoTabs from "./components/TodoTabs";
 import { Context } from "./utils/context";
 import reducer, { actionType } from "./utils/reduser";
+import { Divider } from "@mui/material";
 
 export default function TodoApp() {
   const [todos, dispatch] = useReducer(reducer, FakeData);
@@ -22,24 +23,15 @@ export default function TodoApp() {
     }
   };
 
-
-  // const editTodo = (id) => {
-  //   const oldTitle = getTodoById(id).title;
-  //   const newTitle = openModalInput(oldTitle);
-  //   setTodos(
-  //     todos.map((todo) =>
-  //       todo.id === id ? { ...todo, title: newTitle } : { ...todo }
-  //     )
-  //   );
-  // };
-
   return (
     <Context.Provider value={{ dispatch }}>
-      <div>
         <AddTodoForm/>
+        <br/>
+        <Card  >
         <TodoTabs value={tab} setValue={setTab} />
+        <Divider />
         <TodoList todos={getActiveTodoList()} />
-      </div>
+      </Card>
     </Context.Provider>
   );
 }
