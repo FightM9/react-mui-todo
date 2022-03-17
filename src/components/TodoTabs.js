@@ -13,8 +13,8 @@ export default function TodoTabs({value, setValue}) {
   };
 
   return (
-    <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-      <Tab icon={<AppsRoundedIcon />} iconPosition="start" label="All"/>
+    <Tabs value={value} variant="fullWidth" onChange={handleChange} aria-label="basic tabs example">
+      <Tab icon={<AppsRoundedIcon/>} iconPosition="start" label="All"/>
       <Tab icon={<AccessTimeRoundedIcon />} iconPosition="start" label="Pending" />
       <Tab icon={<CheckIcon />} iconPosition="start" label="Completed" />
     </Tabs>
