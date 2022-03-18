@@ -49,8 +49,8 @@ export default function TodoList({ todos }) {
 
   if (todos.length == 0) {
     return (
-      <Box sx={{ p: '36px', width: '100%', textAlign: 'center'}}>   
-         <Typography variant="subtitle2" gutterBottom component="div">
+      <Box sx={{ p: '36px'}}>   
+         <Typography variant="subtitle2" align="center"  gutterBottom component="div">
          There are no tasks to show for now
          </Typography>
       </Box>

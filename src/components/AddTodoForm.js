@@ -4,6 +4,9 @@ import Paper from "@mui/material/Paper";
 import React, { useContext, useState } from "react";
 import { Context } from "../utils/context";
 import { actionType } from "../utils/reduser";
+import { Box } from "@mui/system";
+
+
 
 export default function AddTodoForm() {
   const [userInput, setUserInput] = useState("");
@@ -24,7 +27,7 @@ export default function AddTodoForm() {
   }
 
   return (
-    <Paper
+    <Box    
       component="form"
       onSubmit={onFormSubmit}
       sx={{ p: "2px 4px", display: "flex", alignItems: "center" }}
@@ -36,9 +39,14 @@ export default function AddTodoForm() {
         type="text"
         placeholder="Add new task"
       />
-      <IconButton disabled={!userInput.trim()} sx={{ p: "10px" }} type="submit" aria-label="Add new Todo">
+      <IconButton
+        disabled={!userInput.trim()}
+        sx={{ p: "10px" }}
+        type="submit"
+        aria-label="Add new Todo"
+      >
         <AddIcon />
       </IconButton>
-    </Paper>
+    </Box>
   );
 }
