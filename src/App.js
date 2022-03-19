@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import TodoApp from "./components/Todo/TodoApp";
 import Header from "./components/Header/Header";
+import TodoApp from "./components/Todo/TodoApp";
 import theme from "./utils/theme";
 import { Container } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
@@ -8,6 +8,7 @@ import { Box } from "@mui/system";
 import "./App.css";
 
 export default function App() {
+  // Dark mode boolean status
   const [darkMode, setDarkMode] = useState(true); 
 
   return (

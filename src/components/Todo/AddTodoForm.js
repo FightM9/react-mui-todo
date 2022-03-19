@@ -1,11 +1,9 @@
-import { IconButton, InputBase } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import React, { useContext, useState } from "react";
 import { Context } from "../../utils/context";
 import { actionType } from "../../utils/reduser";
 import { Box } from "@mui/system";
-
-
+import { IconButton, InputBase } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
 export default function AddTodoForm() {
   const [userInput, setUserInput] = useState("");
@@ -26,7 +24,7 @@ export default function AddTodoForm() {
   }
 
   return (
-    <Box    
+    <Box
       component="form"
       onSubmit={onFormSubmit}
       sx={{ p: "10px 10px", display: "flex", alignItems: "center" }}

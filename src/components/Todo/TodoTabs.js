@@ -5,21 +5,31 @@ import CheckIcon from "@mui/icons-material/Check";
 import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
 
-export default function TodoTabs({ value, setValue }) {
-  const handleChange = (evt, newValue) => {
-    setValue(newValue);
+export default function TodoTabs({ tab, setTab }) {
+  const handleChange = (evt, newTabIndex) => {
+    setTab(newTabIndex);
   };
 
   return (
     <Tabs
-      value={value}
+      value={tab}
       variant="fullWidth"
       onChange={handleChange}
       aria-label="basic tabs example"
     >
-      <Tab icon={<AppsRoundedIcon />} iconPosition="start" label="All" />
-      <Tab icon={<AccessTimeRoundedIcon />} iconPosition="start" label="Pending"/>
-      <Tab icon={<CheckIcon />} iconPosition="start" label="Completed" />
+      <Tab 
+        icon={<AppsRoundedIcon />}
+        iconPosition="start"
+        label="All" />
+      <Tab
+        icon={<AccessTimeRoundedIcon />}
+        iconPosition="start"
+        label="Pending"
+      />
+      <Tab 
+        icon={<CheckIcon />}
+        iconPosition="start" 
+        label="Completed" />
     </Tabs>
   );
 }

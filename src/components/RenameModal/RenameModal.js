@@ -17,17 +17,18 @@ export default function RenameModal({ editableTodo, onRename, open, setOpen }) {
   const handleRename = () => {
     const newTitle = inputRef.current.value;
     if (!newTitle.trim()) return;
+    
     onRename({ ...editableTodo, title: newTitle });
     setOpen(false);
   };
 
   return (
     <div>
-      <Dialog open={open} onClose={handleClose} >
-        <DialogTitle >Rename</DialogTitle>
-        <DialogContent dividers >
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Rename</DialogTitle>
+        <DialogContent dividers>
           <DialogContentText>
-           Enter a new title for the "{editableTodo.title}"
+            Enter a new title for the "{editableTodo.title}"
           </DialogContentText>
           <TextField
             inputRef={inputRef}
@@ -37,12 +38,30 @@ export default function RenameModal({ editableTodo, onRename, open, setOpen }) {
             fullWidth
             variant="standard"
             defaultValue={editableTodo.title}
-            onKeyPress={(e) => {if (e.key === 'Enter') {handleRename()}}}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                handleRename();
+              }
+            }}
           />
         </DialogContent>
         <DialogActions>
-          <Button size="small" variant="" onClick={handleClose} disableElevation >Cancel</Button>
-          <Button size="small" variant="contained" onClick={handleRename} disableElevation >Rename</Button>
+          <Button
+            size="small"
+            variant=""
+            onClick={handleClose}
+            disableElevation
+          >
+            Cancel
+          </Button>
+          <Button
+            size="small"
+            variant="contained"
+            onClick={handleRename}
+            disableElevation
+          >
+            Rename
+          </Button>
         </DialogActions>
       </Dialog>
     </div>

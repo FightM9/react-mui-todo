@@ -44,7 +44,7 @@ export default function TodoList({ todos }) {
     });
   };
 
-  if (todos.length == 0) {
+  if (todos.length === 0) {
     return (
       <Box sx={{ p: "36px" }}>
         <Typography
@@ -68,10 +68,18 @@ export default function TodoList({ todos }) {
             disablePadding
             secondaryAction={
               <div>
-                <IconButton  aria-label="rename task" size="small" onClick={() => onEdit(todo)}>
+                <IconButton
+                  aria-label="rename task"
+                  size="small"
+                  onClick={() => onEdit(todo)}
+                >
                   <ModeEditOutlinedIcon fontSize="small" />
                 </IconButton>
-                <IconButton  aria-label="delete task" size="small" onClick={() => onRemove(todo)}>
+                <IconButton
+                  aria-label="delete task"
+                  size="small"
+                  onClick={() => onRemove(todo)}
+                >
                   <DeleteOutlineOutlinedIcon fontSize="small" />
                 </IconButton>
               </div>
@@ -79,7 +87,7 @@ export default function TodoList({ todos }) {
           >
             <ListItemButton
               // Padding before "Delete" and "Edit" buttons,
-              // default 48px for only one button 
+              // default 48px for only one button
               sx={{ pr: "78px !important" }}
               onClick={() => onToggleCompletion(todo)}
             >
