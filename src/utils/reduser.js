@@ -1,5 +1,3 @@
-
-
 export const actionType = {
   ADD: 'ADD',
   REMOVE: 'REMOVE',
