@@ -1,10 +1,14 @@
+/**
+ * @const {Object} 
+ * All reducer actions in one object
+ */
+
 export const actionType = {
   ADD: 'ADD',
   REMOVE: 'REMOVE',
   EDIT: 'EDIT',
   TOGGLE: 'TOGGLE'
 }
-
 
 /**
  * Returns the state with the new todo item prepended
@@ -73,6 +77,19 @@ function toggleTodo(state, id) {
     todo.id === id ? { ...todo, complete: !todo.complete } : { ...todo }
   );
 }
+
+/**
+ * Reducer for update todo list
+ * 
+ * @param {Object[]} state
+ * Current app state
+ * 
+ * @param {String} action 
+ * Action type. Use an actionType object to select actions
+ * 
+ * @returns 
+ * Returns an updated state 
+ */
 
 export default function reducer(state, action) {
   switch (action.type) {
