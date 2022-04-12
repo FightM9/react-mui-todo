@@ -1,6 +1,7 @@
 # ⚡ Simple React Todo App
 A simple todo web application written in React + JavaScript. 
-Try out now on: 
+
+Try out now on 👉 https://react-mui-todo.vercel.app/
 
 ## Features
 
@@ -11,6 +12,10 @@ Try out now on:
 - 📱 Tablet & mobile friendly
 
 ## Screenshot
+
+![Screenshot demo-dark](/assets/demo-dark.png)
+
+![Screenshot demo-light](/assets/demo-light.png)
 
 
 ## Technologies Used 
